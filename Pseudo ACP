@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Class 10 Project — CSS Pseudo-classes & Selectors</title>
+  <style>
+    /* ---------------------------------------------
+       School Project (Class 10)
+       Topic: CSS Pseudo-classes, Advanced Selectors, Pseudo-elements
+       Author: Student (replace with your name)
+       --------------------------------------------- */
+
+    body{
+      font-family: Arial, sans-serif;
+      margin:0;
+      padding:0;
+      background:#f2f7fb;
+      color:#222;
+    }
+
+    header{
+      background:#1d4ed8;
+      color:#fff;
+      padding:15px;
+      text-align:center;
+    }
+
+    nav{
+      background:#e0e7ff;
+      padding:10px;
+    }
+    nav a{
+      margin-right:10px;
+      text-decoration:none;
+      color:#1d4ed8;
+      padding:6px 10px;
+      border-radius:6px;
+    }
+    nav a:hover{background:#c7d2fe;color:#000;}
+
+    main{
+      padding:20px;
+    }
+    section{
+      margin-bottom:30px;
+      padding:15px;
+      background:#fff;
+      border:1px solid #ddd;
+      border-radius:8px;
+    }
+
+    h2{
+      color:#1d4ed8;
+    }
+
+    /* Pseudo-classes */
+    .btn{
+      display:inline-block;
+      padding:10px 16px;
+      background:#3b82f6;
+      color:#fff;
+      border-radius:6px;
+      text-decoration:none;
+    }
+    .btn:hover{background:#2563eb;}
+    .btn:active{background:#1e40af;}
+    .btn:focus{outline:2px solid #60a5fa;}
+
+    /* Pseudo-elements */
+    .special-heading::before{
+      content:"★ ";
+      color:#f59e0b;
+    }
+    .special-heading::after{
+      content:" ★";
+      color:#f59e0b;
+    }
+    p::first-letter{
+      font-size:1.5em;
+      font-weight:bold;
+      color:#1d4ed8;
+    }
+
+    /* Advanced selectors */
+    ul li:nth-child(odd){background:#f3f4f6;}
+    ul li:nth-child(even){background:#e5e7eb;}
+
+    .faq .question + .answer{display:none;}
+    .faq .question.open + .answer{display:block;}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CSS Pseudo-classes, Selectors & Pseudo-elements</h1>
+  </header>
+
+  <nav>
+    <a href="#intro">Introduction</a>
+    <a href="#pseudo">Pseudo-classes</a>
+    <a href="#pseudoel">Pseudo-elements</a>
+    <a href="#advanced">Advanced Selectors</a>
+  </nav>
+
+  <main>
+    <section id="intro">
+      <h2>Introduction</h2>
+      <p>This project is prepared as part of Class 10 Computer Applications subject. It shows how pseudo-classes, pseudo-elements and advanced selectors are used in CSS with simple examples.</p>
+    </section>
+
+    <section id="pseudo">
+      <h2>Pseudo-classes</h2>
+      <p>Pseudo-classes are used to define the special state of an element like when the user hovers or clicks it.</p>
+      <a href="#" class="btn">Hover or Click me</a>
+      <pre><code>.btn:hover{ background:#2563eb; }
+.btn:active{ background:#1e40af; }
+</code></pre>
+    </section>
+
+    <section id="pseudoel">
+      <h2 class="special-heading">Pseudo-elements</h2>
+      <p>Pseudo-elements let us style specific parts of an element, such as the first letter or insert content before/after.</p>
+      <pre><code>p::first-letter{ font-size:1.5em; color:blue; }
+.special-heading::before{ content:"★"; }
+</code></pre>
+    </section>
+
+    <section id="advanced">
+      <h2>Advanced Selectors</h2>
+      <p>Selectors help us target specific HTML elements. Examples include nth-child and sibling selectors.</p>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+
+      <div class="faq">
+        <div class="question" tabindex="0">Click me to see answer</div>
+        <div class="answer">This is the hidden answer shown using sibling selector.</div>
+      </div>
+
+      <pre><code>ul li:nth-child(odd){ background:#f3f4f6; }
+.question + .answer{ display:none; }
+.question.open + .answer{ display:block; }
+</code></pre>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('.faq .question').forEach(q=>{
+      q.addEventListener('click', ()=> q.classList.toggle('open'));
+    });
+  </script>
+</body>
+</html>
