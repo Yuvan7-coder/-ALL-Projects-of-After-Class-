@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesthetic Box Model</title>
+    <style>
+        /* 🌌 Background & Basic Setup */
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #00ffcc, #00bfff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px #00ffe0;
+        }
+
+        /* 🎁 Box Model Container */
+        .box {
+            width: 320px;
+            background-color: #222;
+            border: 8px solid #00bfff;
+            padding: 30px;
+            margin: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+            transition: 0.4s ease;
+            position: relative;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 45px rgba(0, 255, 255, 0.8);
+        }
+
+        /* 💎 Layer Colors (just for visuals) */
+        .margin {
+            background-color: rgba(255, 0, 102, 0.15);
+            padding: 15px;
+            border-radius: 20px;
+        }
+
+        .border {
+            background-color: rgba(0, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .padding {
+            background-color: rgba(255, 255, 0, 0.15);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.08);
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        /* ✨ Footer */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.9rem;
+            color: #aaa;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>✨ CSS Box Model ✨</h1>
+
+    <div class="box">
+        <div class="margin">
+            <div class="border">
+                <div class="padding">
+                    <div class="content">
+                        <strong>Content:</strong> This is the actual text or element.<br><br>
+                        <strong>Padding:</strong> Space around the content.<br><br>
+                        <strong>Border:</strong> Line wrapping the padding.<br><br>
+                        <strong>Margin:</strong> Space outside the border.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>Made with 💙 by Yuvan Lizz</footer>
+
+</body>
+
+</html>
