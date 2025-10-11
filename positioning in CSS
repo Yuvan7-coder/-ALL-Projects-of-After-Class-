@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official CSS Layout</title>
+    <style>
+        /* ===== Body & Global Styles ===== */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ===== Header ===== */
+        header {
+            width: 100%;
+            padding: 30px 50px;
+            background: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h2 {
+            margin: 0;
+            font-size: 2rem;
+            color: #f5a623;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #fff;
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #f5a623;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding-top: 100px;
+            /* space for header */
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: #ff6b6b;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: auto;
+            color: #fff;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ===== Content Sections ===== */
+        section {
+            max-width: 1200px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: #f5a623;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        section p {
+            font-size: 1.2rem;
+            color: #fff;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* ===== Floating Shapes ===== */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 8s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .shape1 {
+            width: 150px;
+            height: 150px;
+            background: #ff6b6b;
+            top: 100px;
+            left: 50px;
+        }
+
+        .shape2 {
+            width: 200px;
+            height: 200px;
+            background: #f5a623;
+            top: 400px;
+            right: 100px;
+        }
+
+        .shape3 {
+            width: 100px;
+            height: 100px;
+            background: #1dd1a1;
+            top: 700px;
+            left: 300px;
+        }
+
+        .shape4 {
+            width: 250px;
+            height: 250px;
+            background: #6a11cb;
+            top: 1200px;
+            right: 50px;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-40px);
+            }
+        }
+
+        /* ===== Fixed Contact Button ===== */
+        .contact-btn {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            background: #ff6b6b;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .contact-btn:hover {
+            background: #f5a623;
+            transform: translateY(-5px);
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 1rem;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Shapes -->
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+    <div class="shape shape4"></div>
+
+    <!-- Header -->
+    <header>
+        <h2>My Company</h2>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero" id="hero">
+        <div>
+            <h1>Welcome to Our Official Website</h1>
+            <p>
+                Explore how CSS positioning, text styling, background effects, and box model can create an elegant,
+                professional, and dynamic website layout.
+            </p>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            Our company is dedicated to delivering high-quality web experiences. By leveraging modern CSS techniques
+            like positioning (absolute, relative, fixed), we ensure that every element is in its perfect place.
+            The box model is applied to create well-spaced, visually appealing sections, while text styling enhances
+            readability and professionalism.
+        </p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>
+            From responsive layouts to animated backgrounds, we provide services that make websites interactive and
+            engaging. Using CSS gradients, shadows, and carefully designed spacing, we craft pages that look
+            sophisticated and modern.
+        </p>
+    </section>
+
+    <!-- Fixed Contact Button -->
+    <a href="#contact" class="contact-btn">Contact Us</a>
+
+    <!-- Footer -->
+    <footer id="contact">
+        &copy; 2025 My Company. All Rights Reserved.
+        <br>
+        yuvanlizz24@gmail.com 
+    </footer>
+
+</body>
+
+</html>
